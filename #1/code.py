@@ -20,16 +20,15 @@ def can_sum(nums, k):
     return -1
 
 
-rng = SystemRandom()
-def randnum():
-    return rng.randrange(100, 1000000)
-def randkey():
-    return rng.randrange(200, 1500000)
-def randarr(size):
-    return [randnum() for _ in range(size)]
-
-
 if __name__ == "__main__":
+    rng = SystemRandom()
+    def randnum():
+        return rng.randrange(100, 1000000)
+    def randkey():
+        return rng.randrange(200, 1500000)
+    def randarr(size):
+        return [randnum() for _ in range(size)]
+
     sizes = [2, 10, 100, 1000, 10000, 100000, 1000000]
     times = []
     anss = []
@@ -46,7 +45,7 @@ if __name__ == "__main__":
             init = clock()
             ans = can_sum(array, key)
             timearr.append(clock()-init)
-            ansarr.append(ans / size)
+            ansarr.append((ans / size) if ans >= 0 else 1)
 
         times.append(timearr)
         anss.append(ansarr)
