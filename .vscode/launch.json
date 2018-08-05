@@ -5,9 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Java",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "#7/Code.class",
+            "args": ""
+        },
+        {
             "type": "lldb",
             "request": "launch",
-            "name": "Launch",
+            "name": "C",
             "program": "${workspaceFolder}/#6/code",
             "args": [],
             "cwd": "${workspaceFolder}"
