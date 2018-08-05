@@ -2,6 +2,14 @@ import java.util.HashMap;
 import java.util.Hashtable;
 
 public class Encoder {
+    public static String toValidMessage(String message) {
+        return message.toLowerCase().replaceAll("[^a-z]+", "");
+    }
+
+    public static String toValidEncoded(String encoded) {
+        return encoded.replaceAll("[^0-9]+", "");
+    }
+
     private static String map(char c) {
         return Integer.toString(c - 'a' + 1);
     }

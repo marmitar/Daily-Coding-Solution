@@ -1,14 +1,27 @@
 public class Code {
     public static void main(String[] args) {
-        if (args.length == 0) {
-            System.out.println("Message needed");
+        if (args.length < 2) {
+            System.out.println("Usage: java Code OPERATION MESSAGE");
             return;
         }
 
-        String msg = args[0];
-        System.out.println("Message: " + msg);
+        String msg;
 
-        msg = Encoder.encode(msg);
+        switch (args[0].toLowerCase()) {
+            case "encode":
+                msg = Encoder.toValidMessage(args[1]);
+                System.out.println("Message: " + msg);
+
+                msg = Encoder.encode(msg);
+            break;
+            case "decode":
+                msg = Encoder.toValidEncoded(args[1]);
+            break;
+            default:
+                System.out.println("Unknown operation");
+                return;
+        }
+
         System.out.println("Encoded: " + msg);
 
         long start = System.currentTimeMillis();
