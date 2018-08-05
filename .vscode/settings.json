@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.pseudoc": "c",
+        "string_view": "cpp",
+        "istream": "cpp"
+    }
+}
