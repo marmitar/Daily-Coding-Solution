@@ -8,22 +8,22 @@ class Node {
         Node *both;
 
     public:
-        void *data;
-        Node(void *element) {
+        int data;
+        Node(int element) {
             data = element;
             both = nullptr;
         }
         Node(void) {
-            data = nullptr;
+            data = -1;
             both = nullptr;
         }
 
-        void add(void *element) {
+        void add(int element) {
             Node *new_node = new Node(element);
 
             Node *prev = nullptr;
             Node *curr = this;
-            Node *next = XOR(prev, curr->both);
+            Node *next = both;
 
             while (next != nullptr) {
                 prev = curr;
@@ -35,7 +35,7 @@ class Node {
             new_node->both = curr;
         }
 
-        Node get(int index) {
+        Node &get(int index) {
             Node *curr = this;
             Node *next = both;
 
@@ -45,7 +45,7 @@ class Node {
                 next = XOR(curr->both, prev);
             }
 
-            return next;
+            return *next;
         }
 };
 
@@ -53,10 +53,10 @@ int main(void) {
     Node raiz = Node();
 
     for (int i = 0; i < 10; i++) {
-        raiz.add(&i);
+        raiz.add(i);
     }
 
-    std::cout << *((int *)raiz.get(6).data) << std::endl;
+    std::cout << raiz.get(6).data << std::endl;
 
     return EXIT_SUCCESS;
 }
