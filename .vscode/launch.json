@@ -17,8 +17,8 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "C",
-            "program": "${workspaceFolder}/#6/code",
+            "name": "CCpp",
+            "program": "${workspaceFolder}/#8/code",
             "args": [],
             "cwd": "${workspaceFolder}"
         },
