@@ -2,3 +2,4 @@
 *.class
 *.o
 code
+__pycache__
