@@ -22,10 +22,7 @@ class Scheduler(Thread):
     """
 
     def __init__(self):
-        """
-        Constructor already starts the thread. This can be modified
-        with the start argument.
-        """
+        """Constructor already starts the thread"""
         Thread.__init__(self)
         self.__sched__ = list()
         self.__running__ = True
