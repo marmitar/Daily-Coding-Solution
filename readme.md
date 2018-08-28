@@ -1,4 +1,4 @@
-Daily Coding Solutions
+Daily Coding Solution
 ===
 
-My solutions to [Daily Coding Problems](www.dailycodingproblem.com).
+My solutions to [Daily Coding Problem](www.dailycodingproblem.com).
