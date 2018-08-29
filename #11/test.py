@@ -42,8 +42,8 @@ def time_queries(autocomplete):
 
 def print_times(mode, insertion, query, queries=26):
     print(mode, 'Query:')
-    print('\t', 'Insertion: ', insertion, 's')
-    print('\t', queries, 'queries:', query, 's')
+    print('\t Insertion:  {:.2f} s'.format(insertion))
+    print('\t {} queries: {:.2f} s'.format(queries, query))
     print()
 
 
@@ -51,11 +51,11 @@ def speed_test():
     fastcomplete, fast_insert = time_insertion("fast")
     slowcomplete, slow_insert = time_insertion("slow")
 
-    fast_queries = time_queries(fastcomplete)
     slow_queries = time_queries(slowcomplete)
+    fast_queries = time_queries(fastcomplete)
 
-    print_times("Fast", fast_insert, fast_queries)
     print_times("Slow", slow_insert, slow_queries)
+    print_times("Fast", fast_insert, fast_queries)
 
 
 speed_test()
