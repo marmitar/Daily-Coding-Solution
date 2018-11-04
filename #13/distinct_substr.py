@@ -16,5 +16,6 @@ def distinct_substr_trivial(s: str, k: int):
     return max_subs
 
 
-ans = distinct_substr_trivial("abcba", 2)
-print(ans, len(ans))
+if __name__ == "__main__":
+    ans = distinct_substr_trivial("abcba", 2)
+    print(ans, len(ans))
