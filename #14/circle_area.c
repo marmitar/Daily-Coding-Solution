@@ -1,5 +1,3 @@
-#define _GNU_SOURCE
-
 #include <math.h>
 #include <stdio.h>
 
@@ -19,7 +17,7 @@ void new_seed() {
 }
 
 static inline
-/* random double between -1 and 1 */
+/* random double between 0 and 1 */
 double random_double(void) {
     static bool first_run = true;
 
@@ -29,33 +27,32 @@ double random_double(void) {
     }
 
     long rand_int = random();
-
-    double rand_double = ((double) rand_int) / ((double) RAND_MAX);
-    return 2. * rand_double - 1.;
+    return ((double) rand_int) / ((double) RAND_MAX);
 }
 
 
 double calc_pi(int points) {
+    double const radius = 1.0;
+    double const radius_sq = radius * radius;
+
     int inside = 0;
-
     for (int i = 0; i < points; i++) {
-        double x = random_double();
-        double y = random_double();
+        double const x = random_double();
+        double const y = random_double();
 
-        double dist = sqrt(x*x + y*y);
+        double const dist_sq = x*x + y*y;
 
-        if (dist <= 1.) {
+        if (dist_sq <= radius_sq) {
             inside++;
         }
     }
 
-    double area_factor = ((double) inside) / ((double) points);
-    double square_area = 2. * 2.;
+    double const area_factor = ((double) inside) / ((double) points);
+    double const square_area = 1.0 * 1.0;
 
-    double circle_area = area_factor * square_area;
-    double radius = 1.;
+    double const circle_area = 4 * area_factor * square_area;
 
-    double pi = circle_area / (radius * radius);
+    double pi = circle_area / radius_sq;
 
     return pi;
 }

@@ -2,4 +2,6 @@
 *.class
 *.o
 code
+main
+target
 __pycache__
