@@ -1,0 +1,6 @@
+[package]
+name = "housebuilding"
+version = "0.1.0"
+authors = ["tiagodepalves <tiagodepalves@gmail.com>"]
+
+[dependencies]
