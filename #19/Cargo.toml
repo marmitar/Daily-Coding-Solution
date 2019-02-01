@@ -4,3 +4,5 @@ version = "0.1.0"
 authors = ["tiagodepalves <tiagodepalves@gmail.com>"]
 
 [dependencies]
+ndarray = "0.12"
+rand = "0.5"
